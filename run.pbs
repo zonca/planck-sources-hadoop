@@ -1,13 +1,12 @@
 #!/bin/bash
 #PBS -q normal
 #PBS -N hadoop_job
-#PBS -l nodes=2:ppn=1
-#PBS -l walltime=0:10:00
+#PBS -l nodes=4:ppn=1
+#PBS -l walltime=1:00:00
 #PBS -o hadoop_run.out
 #PBS -e hadoop_run.err
 #PBS -m abe
 #PBS -V
-#PBS -v Catalina_maxhops=2
 
 # Set this to location of myHadoop on Gordon or Trestles 
 export MY_HADOOP_HOME="/opt/hadoop/contrib/myHadoop"
@@ -32,7 +31,7 @@ sed 's/$/.ibnet0/' $PBS_NODEFILE > $PBS_O_WORKDIR/hadoophosts.txt
 export PBS_NODEFILEZ=$PBS_O_WORKDIR/hadoophosts.txt
 
 ### Copy over configuration files
-$MY_HADOOP_HOME/bin/configure.sh -n 2 -c $HADOOP_CONF_DIR
+$MY_HADOOP_HOME/bin/configure.sh -n 4 -c $HADOOP_CONF_DIR
 
 ### Point hadoop temporary files to local scratch - DO NOT REMOVE -
 
@@ -50,7 +49,7 @@ $HADOOP_HOME/bin/start-all.sh
 #$HADOOP_HOME/bin/hadoop dfsadmin -safemode leave
 echo
 
-export FOLDER=/home/$USER/python-wordcount-hadoop
+export FOLDER=/home/$USER/p/hadoop/planck
 
 #### Run your jobs here
 echo "Run some test Hadoop jobs"
@@ -58,9 +57,9 @@ $HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR dfs -mkdir Input
 sleep 30s
 $HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR dfs -copyFromLocal $FOLDER/input/*.txt Input
 echo "Input files on HDFS"
-$HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR dfs -ls Test
+$HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR dfs -ls Input
 echo "Run the hadoop job"
-$HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR jar $HADOOP_HOME/contrib/streaming/hadoop*streaming*.jar -file $FOLDER/mapper.py -mapper $FOLDER/mapper.py -reducer org.apache.hadoop.mapred.lib.IdentityReducer -input /user/$USER/Input/* -output /user/$USER/Output
+$HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR jar $HADOOP_HOME/contrib/streaming/hadoop*streaming*.jar -file $FOLDER/mapper.py -mapper $FOLDER/mapper.py -input /user/$USER/Input/* -output /user/$USER/Output
 echo "Output files on HDFS"
 $HADOOP_HOME/bin/hadoop --config $HADOOP_CONF_DIR dfs -ls Output
 echo "Copying output locally"
@@ -75,5 +74,5 @@ echo
 
 #### Clean up the working directories after job completion
 echo "Clean up"
-$MY_HADOOP_HOME/bin/cleanup.sh -n 2
+$MY_HADOOP_HOME/bin/cleanup.sh -n 4
 echo

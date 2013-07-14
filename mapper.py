@@ -45,7 +45,7 @@ for line in sys.stdin:
     glon = phi
 
 # open input submap
-    submap_array = np.load(line + ".npy")
+    submap_array = np.load(base_folder + line + ".npy")
     submap = pd.Series(submap_array["temp"], index=submap_array["pix"])
 
     sources_lon = catalogs[freq]["GLON"].searchsorted([glon-halfwidth, glon+halfwidth])
@@ -56,3 +56,5 @@ for line in sys.stdin:
         src_vec = hp.ang2vec(np.radians(90-source["GLAT"]), np.radians(source["GLON"]))
         pix = hp.query_disc(nside, src_vec, np.radians(10/60.))
         print '%s\t%.5e' % (source["NAME"] + "_10arcminmean", submap[pix].mean())
+
+sys.exit(0)
