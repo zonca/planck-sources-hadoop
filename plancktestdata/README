@@ -1,0 +1,26 @@
+Planck inputs from:
+http://irsa.ipac.caltech.edu/Missions/planck.html
+
+The folder should be renamed as plancktest
+
+Folder contents:
+
+COM_PCCS_030_R1.30.fits
+COM_PCCS_044_R1.30.fits
+COM_PCCS_070_R1.30.fits
+COM_PCCS_100_R1.20.fits
+COM_PCCS_143_R1.20.fits
+COM_PCCS_217_R1.20.fits
+COM_PCCS_353_R1.20.fits
+COM_PCCS_545_R1.20.fits
+COM_PCCS_857_R1.20.fits
+HFI_SkyMap_100_2048_R1.10_nominal.fits
+HFI_SkyMap_143_2048_R1.10_nominal.fits
+HFI_SkyMap_217_2048_R1.10_nominal.fits
+HFI_SkyMap_353_2048_R1.10_nominal.fits
+HFI_SkyMap_545_2048_R1.10_nominal.fits
+HFI_SkyMap_857_2048_R1.10_nominal.fits
+LFI_SkyMap_030_1024_R1.10_nominal.fits
+LFI_SkyMap_044_1024_R1.10_nominal.fits
+LFI_SkyMap_070_1024_R1.10_nominal.fits
+LFI_SkyMap_70_2048_R1.10_nominal.fits
