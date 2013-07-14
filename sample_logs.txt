@@ -1,0 +1,116 @@
+
+Hadoop job: 0001_1373756693716_zonca
+=====================================
+Job tracker host name: job
+job tracker start time: Tue May 18 15:38:51 PDT 1976
+User: zonca
+JobName: streamjob7639967911789065315.jar
+JobConf: hdfs://gcn-5-51.ibnet0:54310/scratch/zonca/815278.gordon-fe2.local/hadoop-zonca/data/mapred/staging/zonca/.staging/job_201307131604_0001/job.xml
+Submitted At: 13-Jul-2013 16:04:53
+Launched At: 13-Jul-2013 16:04:53 (0sec)
+Finished At: 13-Jul-2013 16:09:25 (4mins, 31sec)
+Status: SUCCESS
+Counters: 
+
+|Group Name                    |Counter name                  |Map Value |Reduce Value|Total Value|
+---------------------------------------------------------------------------------------
+|Job Counters                  |Launched reduce tasks         |0         |0         |1         
+|Job Counters                  |SLOTS_MILLIS_MAPS             |0         |0         |494,730   
+|Job Counters                  |Total time spent by all reduces waiting after reserving slots (ms)|0         |0         |0         
+|Job Counters                  |Total time spent by all maps waiting after reserving slots (ms)|0         |0         |0         
+|Job Counters                  |Launched map tasks            |0         |0         |2         
+|Job Counters                  |Data-local map tasks          |0         |0         |2         
+|Job Counters                  |SLOTS_MILLIS_REDUCES          |0         |0         |10,144    
+|File Input Format Counters    |Bytes Read                    |40,176    |0         |40,176    
+|File Output Format Counters   |Bytes Written                 |0         |107,567   |107,567   
+|FileSystemCounters            |FILE_BYTES_READ               |0         |111,963   |111,963   
+|FileSystemCounters            |HDFS_BYTES_READ               |40,386    |0         |40,386    
+|FileSystemCounters            |FILE_BYTES_WRITTEN            |157,653   |134,774   |292,427   
+|FileSystemCounters            |HDFS_BYTES_WRITTEN            |0         |107,567   |107,567   
+|Map-Reduce Framework          |Map output materialized bytes |111,969   |0         |111,969   
+|Map-Reduce Framework          |Map input records             |1,296     |0         |1,296     
+|Map-Reduce Framework          |Reduce shuffle bytes          |0         |47,907    |47,907    
+|Map-Reduce Framework          |Spilled Records               |2,195     |2,195     |4,390     
+|Map-Reduce Framework          |Map output bytes              |107,567   |0         |107,567   
+|Map-Reduce Framework          |Total committed heap usage (bytes)|401,997,824|200,998,912|602,996,736
+|Map-Reduce Framework          |CPU time spent (ms)           |9,610     |2,220     |11,830    
+|Map-Reduce Framework          |Map input bytes               |40,176    |0         |40,176    
+|Map-Reduce Framework          |SPLIT_RAW_BYTES               |210       |0         |210       
+|Map-Reduce Framework          |Combine input records         |0         |0         |0         
+|Map-Reduce Framework          |Reduce input records          |0         |2,195     |2,195     
+|Map-Reduce Framework          |Reduce input groups           |0         |2,195     |2,195     
+|Map-Reduce Framework          |Combine output records        |0         |0         |0         
+|Map-Reduce Framework          |Physical memory (bytes) snapshot|495,136,768|138,006,528|633,143,296
+|Map-Reduce Framework          |Reduce output records         |0         |2,195     |2,195     
+|Map-Reduce Framework          |Virtual memory (bytes) snapshot|1,325,887,488|663,998,464|1,989,885,952
+|Map-Reduce Framework          |Map output records            |2,195     |0         |2,195     
+=====================================
+
+Task Summary
+============================
+Kind	Total	Successful	Failed	Killed	StartTime	FinishTime
+
+Setup	1	1		0	0	13-Jul-2013 16:04:57	13-Jul-2013 16:05:01 (4sec)
+Map	2	2		0	0	13-Jul-2013 16:05:02	13-Jul-2013 16:09:07 (4mins, 4sec)
+Reduce	1	1		0	0	13-Jul-2013 16:09:06	13-Jul-2013 16:09:17 (10sec)
+Cleanup	1	1		0	0	13-Jul-2013 16:09:18	13-Jul-2013 16:09:23 (4sec)
+============================
+
+
+Analysis
+=========
+
+Time taken by best performing map task task_201307131604_0001_m_000000: 4mins, 1sec
+Average time taken by map tasks: 4mins, 3sec
+Worse performing map tasks: 
+TaskId		Timetaken
+task_201307131604_0001_m_000001 4mins, 4sec
+task_201307131604_0001_m_000000 4mins, 1sec
+The last map task task_201307131604_0001_m_000001 finished at (relative to the Job launch time): 13-Jul-2013 16:09:07 (4mins, 13sec)
+
+Time taken by best performing shuffle task task_201307131604_0001_r_000000: 7sec
+Average time taken by shuffle tasks: 7sec
+Worse performing shuffle tasks: 
+TaskId		Timetaken
+task_201307131604_0001_r_000000 7sec
+The last shuffle task task_201307131604_0001_r_000000 finished at (relative to the Job launch time): 13-Jul-2013 16:09:14 (4mins, 20sec)
+
+Time taken by best performing reduce task task_201307131604_0001_r_000000: 2sec
+Average time taken by reduce tasks: 2sec
+Worse performing reduce tasks: 
+TaskId		Timetaken
+task_201307131604_0001_r_000000 2sec
+The last reduce task task_201307131604_0001_r_000000 finished at (relative to the Job launch time): 13-Jul-2013 16:09:17 (4mins, 23sec)
+=========
+
+FAILED SETUP task list for 0001_1373756693716_zonca
+TaskId		StartTime	FinishTime	Error
+====================================================
+
+KILLED SETUP task list for 0001_1373756693716_zonca
+TaskId		StartTime	FinishTime	Error
+====================================================
+
+FAILED MAP task list for 0001_1373756693716_zonca
+TaskId		StartTime	FinishTime	Error	InputSplits
+====================================================
+
+KILLED MAP task list for 0001_1373756693716_zonca
+TaskId		StartTime	FinishTime	Error	InputSplits
+====================================================
+
+FAILED REDUCE task list for 0001_1373756693716_zonca
+TaskId		StartTime	FinishTime	Error
+====================================================
+
+KILLED REDUCE task list for 0001_1373756693716_zonca
+TaskId		StartTime	FinishTime	Error
+====================================================
+
+FAILED CLEANUP task list for 0001_1373756693716_zonca
+TaskId		StartTime	FinishTime	Error
+====================================================
+
+KILLED CLEANUP task list for 0001_1373756693716_zonca
+TaskId		StartTime	FinishTime	Error
+====================================================
